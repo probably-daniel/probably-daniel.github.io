@@ -6,7 +6,7 @@ body {
 
 #backdrop {
 	position: absolute;
-	z-index: 1; /* Set a lower z-index value for the backdrop element */
+	z-index: 1; 
 	background-image: url("assets/graphics/skry.png");
 	animation: backdrop-animation 100s infinite;
 	width: 100%;
@@ -15,7 +15,7 @@ body {
 
 #bg {
 	position: absolute;
-	z-index: 2; /* Set a lower z-index value for the bg element */
+	z-index: 2; 
 	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73));
 	width: 100%;
 	height: 100%;
@@ -24,7 +24,7 @@ body {
 }
 #skry {
 	position: absolute;
-	z-index: 3; /* Set a higher z-index value for the skry element */
+	z-index: 3; 
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%) scale(0.5);
@@ -32,7 +32,7 @@ body {
 
 .dbop {
 	animation: bop 0.189s infinite cubic-bezier(0.25, 1, 0.5, 1);
-	animation-delay: 0.759s;
+	animation-delay: 0.189s;
 }
 .abop {
 	animation: bbop 0.1s infinite;

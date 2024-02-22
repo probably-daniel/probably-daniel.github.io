@@ -12,19 +12,32 @@
 			<img id="skry" class="mid"  src="assets/graphics/skry.png">
 				<script>
 					const audio = new Audio('assets/audio/after_the_storm.mp3');
+					audio.loop = true;
+					
 					const skry = document.getElementById("skry");
 					const bg = document.getElementById("bg");
 					const bpm = 79;
 					const crochet = (60 / bpm) * 1000;
+					var isplaying = false;
 					skry.addEventListener("click", function () {
-						bg.classList.add("abop");
-						bg.style.animationDuration = crochet*4 + 'ms';
-						bg.style.animationIterationCount = "infinite";
-						
-						skry.classList.add("dbop");
-						skry.style.animationDuration = crochet + 'ms';
-						skry.style.animationIterationCount = "infinite";
-						audio.play();
+						isplaying = !isplaying;
+						if (isplaying) {
+							bg.classList.add("abop");
+							bg.style.animationDuration = crochet*4 + 'ms';
+							bg.style.animationIterationCount = "infinite";
+							
+							skry.classList.add("dbop");
+							skry.style.animationDuration = crochet + 'ms';
+							skry.style.animationIterationCount = "infinite";
+							bg.style.animationPlayState = "running"; // Add this line to reset animation timin
+							skry.style.animationPlayState = "running"; // Add this line to reset animation timi
+							
+							audio.play();
+						} else {
+							bg.style.animationPlayState = "paused"; // Add this line to reset animation timin
+							skry.style.animationPlayState = "paused"; // Add this line to reset animation timi
+							audio.pause();
+						}
 
 						// print out it work
 						console.log("skry.mp3");

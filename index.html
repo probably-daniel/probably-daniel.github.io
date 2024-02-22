@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!--import stylesheet-->
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<div id="container">
-			<!--Add Skry.png-->
 			<div id="backdrop"></div>
 			<div id="bg"></div>
 			<img id="skry" class="mid"  src="assets/graphics/skry.png">
 				<script>
 					const audio = new Audio('assets/audio/after_the_storm.mp3');
+					audio.load();
 					audio.loop = true;
 					
 					const skry = document.getElementById("skry");
@@ -29,13 +28,13 @@
 							skry.classList.add("dbop");
 							skry.style.animationDuration = crochet + 'ms';
 							skry.style.animationIterationCount = "infinite";
-							bg.style.animationPlayState = "running"; // Add this line to reset animation timin
-							skry.style.animationPlayState = "running"; // Add this line to reset animation timi
+							bg.style.animationPlayState = "running"; 
+							skry.style.animationPlayState = "running";
 							
 							audio.play();
 						} else {
-							bg.style.animationPlayState = "paused"; // Add this line to reset animation timin
-							skry.style.animationPlayState = "paused"; // Add this line to reset animation timi
+							bg.style.animationPlayState = "paused"; 
+							skry.style.animationPlayState = "paused"; 
 							audio.pause();
 						}
 
